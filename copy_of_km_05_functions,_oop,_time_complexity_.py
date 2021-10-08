@@ -381,3 +381,109 @@ if result != -1:
     print("Element is present at index", str(result))
 else:
     print("Element is not present in array")
+
+#Hallo Yasmine, Adel izin buat menambahkan program OOP di sini ya 
+## **Encapsulation**
+class Sapi:
+  def __init__(self, nama, usia, jenis_kelamin, warna, jenis):
+    self.nama = nama
+    self.usia = usia
+    self.jenis_kelamin = jenis_kelamin
+    self.warna = warna
+    self.jenis = jenis
+
+  def myfunc(self):
+    print("Hello my name is " + self.nama)
+  
+  def moo(self):
+    print("mhooooooo... ")
+
+  def info(self):
+    print(f"nama: {self.nama}, usia: {self.usia}, jenis kelamin: {self.jenis_kelamin}, warna: {self.warna}, jenis: {self.jenis}")
+
+
+sapi1 = Sapi("abang", 1, "jantan", "coklat muda", "limosin")
+
+sapi1.info()
+
+## **Abstraction**
+sapi1.myfunc()
+
+## **Inheritence**
+class Binatang(object):
+  def __init__(self, nama, usia, jenis, mamalia):
+    self.nama = nama
+    self.usia = usia
+    self.jenis = jenis
+    self.mamalia = mamalia
+
+  def tidur(self, durasi):
+    for x in range(durasi):
+      print("ddrrr... ddrrr... ")
+
+  def info(self):
+    print(f"nama: {self.nama}, usia: {self.usia}, jenis: {self.jenis}, mamalia: {self.mamalia}")
+
+
+animal1 = Binatang("cemong", 1, "omnivora", True)
+
+animal1.info()
+
+
+class Sapi(Binatang):
+  def __init__(self,  nama, usia, jenis_kelamin, mamalia, warna, jenis_sapi):
+    super().__init__(nama, usia, jenis_kelamin, mamalia)
+    self.warna = warna
+    self.jenis_sapi = jenis_sapi
+  
+  def moo(self):
+    print("mhoooooo....")
+
+  def info_sapi(self):
+    print(f"warna: {self.warna}, jenis sapi: {self.jenis_sapi}")
+
+cow1 = Sapi("mipan", 1.5, "betina", True, "putih hitam", "perah")
+
+cow1.info()
+cow1.info_sapi()
+
+## **Polymorphism**
+class Tumbuhan(object):
+  def __init__(self, nama, usia, jenis_tumbuhan):
+    self.nama = nama
+    self.usia = usia
+    self.jenis_tumbuhan = jenis_tumbuhan
+
+  def tidur(self, durasi):
+    for x in range(durasi):
+      print("bbrrrr... bbrrrr... ")
+
+  def info(self):
+    print(f"nama: {self.nama}, usia: {self.usia}, jenis: {self.jenis_tumbuhan}")
+
+
+plant1 = Tumbuhan("Atang", 3.5, "Umbi-umbian")
+
+plant1.info()
+
+class Kentang(Tumbuhan):
+  def __init__(self,  nama, usia, warna, jenis_sayuran, jenis_tumbuhan):
+    super().__init__(nama, usia, jenis_tumbuhan)
+    self.warna = warna
+    self.jenis_sayuran = jenis_sayuran
+
+  def tumbuh(self, durasi):
+    for x in range(durasi):
+      print("hallo... aku adalah kentang yang sehat... ")
+
+  def info_kentang(self):
+    print(f"warna: {self.warna}, jenis kentang: {self.jenis_sayuran}")
+
+potato1 = Kentang("Atang", 3.5 , "cokelat muda terang", "Russet", "Umbi-umbian")
+
+potato1.tidur(3)
+print()
+potato1.info()
+potato1.info_kentang()
+potato1.tumbuh(2)
+#Sudah Yasmine, terima kasih banyak untuk kolaborasinya :)
